@@ -2,7 +2,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { GroupPage, UserPage } from "./Pages";
+import { UserPage, UserEditPage, UserRolesEditPage, GroupPage, GroupEditPage, GroupRolesEditPage } from "./Pages";
 import { SearchPage } from "./Pages/SearchPage";
 import { EventPage } from "./Pages/EventPage";
 import { EventEditPage } from "./Pages/EventEditPage";
@@ -15,7 +15,7 @@ export const Routes = [
         element: <SearchPage />
     },
     {
-        path: "/user/:id",
+        path: "/user/view/:id",
         element: <UserPage />,
         errorElement: <SearchPage />,
     },
@@ -32,6 +32,16 @@ export const Routes = [
     {
         path: "/group/:id",
         element: <GroupPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/group/edit/:id",
+        element: <GroupEditPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/grouproles/edit/:id",
+        element: <GroupRolesEditPage />,
         errorElement: <SearchPage />,
     },
     {
