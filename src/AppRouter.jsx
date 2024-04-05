@@ -5,6 +5,7 @@ import {
 import { GroupPage, UserPage } from "./Pages";
 import { SearchPage } from "./Pages/SearchPage";
 import { EventPage } from "./Pages/EventPage";
+import { EventEditPage } from "./Pages/EventEditPage";
 // import { UserPage, GroupPage } from "./Pages";
 
 export const Routes = [
@@ -21,6 +22,11 @@ export const Routes = [
     {
         path: "/event/:id",
         element: <EventPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/event/edit/:id",
+        element: <EventEditPage />,
         errorElement: <SearchPage />,
     },
     {

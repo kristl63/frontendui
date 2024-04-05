@@ -10,14 +10,14 @@ export const EventLargeCard = ({event, children}) => {
     return (
         <CardCapsule title={"Událost " + event?.name}>
             <Row>
-                <Col md={4}>
+                <Col md={3}>
                     <EventMediumCard event = {event}/>
                    {/*  <UserMediumCard user={user} /> */}
                 </Col>
-                <Col md={4}>
+                <Col md={6}>
                     {children}
                 </Col>
-                <Col md={4}>
+                <Col md={3}>
                     <EventMediumCard event = {event}/>
                    {/*  <UserRolesCard user={user} /> */}
                 </Col>
