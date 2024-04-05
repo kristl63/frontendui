@@ -1,6 +1,7 @@
 import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { EventMediumCard } from './EventMediumCard'
 //import { UserRolesCard } from './UserRolesCard'
 //import { UserRawCard } from './UserRawCard'
 //import { UserMediumCard } from './UserMediumCard'
@@ -9,13 +10,15 @@ export const EventLargeCard = ({event, children}) => {
     return (
         <CardCapsule title={"Událost " + event?.name}>
             <Row>
-                <Col md={3}>
+                <Col md={4}>
+                    <EventMediumCard event = {event}/>
                    {/*  <UserMediumCard user={user} /> */}
                 </Col>
-                <Col md={6}>
+                <Col md={4}>
                     {children}
                 </Col>
-                <Col md={3}>
+                <Col md={4}>
+                    <EventMediumCard event = {event}/>
                    {/*  <UserRolesCard user={user} /> */}
                 </Col>
 
