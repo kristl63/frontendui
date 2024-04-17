@@ -8,7 +8,7 @@ import { EventLargeCard } from "../Components/Event/EventLargeCard"
 import { EventEditCard } from "../Components/Event/EventEditCard"
 
 const validator = CreateAsyncQueryValidator({error: "Nepovedlo se načíst uživatele", success: "Načtení uživatele se povedlo"})
-export const EventEditPage = ()  => {
+export const PspViewPage = ()  => {
     const {id} = useParams()
     const [onResolve, onReject] = validator(useDispatch())
     const [event, userPromise] = useFreshItem({id}, FetchEventByIdAsyncAction)
@@ -21,7 +21,6 @@ export const EventEditPage = ()  => {
             //    {JSON.stringify(event)}
             //</div>
             <EventLargeCard event={event}>
-                <EventEditCard event = {event}/>
                 <EventEditCard event = {event}/>
             </EventLargeCard>
         )

@@ -25,7 +25,12 @@ export const Routes = [
         errorElement: <SearchPage />,
     },
     {
-        path: "/event/edit/:id",
+        path: "/psp/view/:id",
+        element: <EventEditPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/psp/edit/:id",
         element: <EventEditPage />,
         errorElement: <SearchPage />,
     },
@@ -56,7 +61,7 @@ export const Routes = [
     },    
 ]
 
-const router = createBrowserRouter(Routes, {basename: "/ug"});
+const router = createBrowserRouter(Routes, {basename: "/ug/lessons"});//ori="/ug"
 // const router = createBrowserRouter(Routes);
 
 export const AppRouter = () => <RouterProvider router={router} />
