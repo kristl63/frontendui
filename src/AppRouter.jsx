@@ -2,10 +2,11 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { UserPage, UserEditPage, UserRolesEditPage, GroupPage, GroupEditPage, GroupRolesEditPage } from "./Pages";
+import { UserPage, UserEditPage, UserRolesEditPage, GroupPage, GroupEditPage, GroupRolesEditPage} from "./Pages";
 import { SearchPage } from "./Pages/SearchPage";
 import { EventPage } from "./Pages/EventPage";
 import { EventEditPage } from "./Pages/EventEditPage";
+import { PspViewPage } from "./Pages/PspViewPage";
 // import { UserPage, GroupPage } from "./Pages";
 
 export const Routes = [
@@ -25,8 +26,13 @@ export const Routes = [
         errorElement: <SearchPage />,
     },
     {
-        path: "/psp/view/:id",
+        path: "/event/edit/:id",
         element: <EventEditPage />,
+        errorElement: <SearchPage />,
+    },
+    {
+        path: "/psp/view/:id",
+        element: <PspViewPage />,
         errorElement: <SearchPage />,
     },
     {
@@ -61,7 +67,7 @@ export const Routes = [
     },    
 ]
 
-const router = createBrowserRouter(Routes, {basename: "/ug/lessons"});//ori="/ug"
+const router = createBrowserRouter(Routes, {basename: "/lessons"});//ori="/ug"
 // const router = createBrowserRouter(Routes);
 
 export const AppRouter = () => <RouterProvider router={router} />
