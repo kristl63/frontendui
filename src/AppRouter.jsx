@@ -7,6 +7,7 @@ import { SearchPage } from "./Pages/SearchPage";
 import { EventPage } from "./Pages/EventPage";
 import { EventEditPage } from "./Pages/EventEditPage";
 import { PspViewPage } from "./Pages/PspViewPage";
+import { PspEditPage } from "./Pages/PspEditPage";
 // import { UserPage, GroupPage } from "./Pages";
 
 export const Routes = [
@@ -37,7 +38,7 @@ export const Routes = [
     },
     {
         path: "/psp/edit/:id",
-        element: <EventEditPage />,
+        element: <PspEditPage />,
         errorElement: <SearchPage />,
     },
     {

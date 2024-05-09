@@ -2,39 +2,39 @@
 import { CardCapsule, EditableAttributeText, EditableAttributeSelect } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { UpdatePspAsyncAction } from '../../Queries/UpadatePspAsyncAction'
+import { UpdateLessonsAsyncAction} from '../../Queries/UpadateLessonsAsyncAction'
 
-export const PspEditCard = ({psp}) => {//Záměna user za event
+export const PspEditCard = ({lesson}) => {
 
-    const eventEx = {...psp, eventType_id: psp?.eventType?.id}
+    //const eventEx = {...psp, eventType_id: psp?.eventType?.id}
 
     return (
-        <CardCapsule title={"Lessons - atributy" + psp?.name}>
+        <CardCapsule title={"Lessons - atributy" + lesson?.name}>
             
             <Row>
                 <Col>Název</Col>
-                <Col>{psp?.name}</Col>
+                <Col>{lesson?.name}</Col>
             </Row>
             <Row>
                  <Col>
-                      <EditableAttributeText item={psp} attributeName="name" label="Název" asyncUpdater={UpdatePspAsyncAction}/>
+                      <EditableAttributeText item={lesson} attributeName="name" label="Název" asyncUpdater={UpdateLessonsAsyncAction}/>
                  </Col>
             </Row>
             <Row>
                  <Col>
-                        <EditableAttributeSelect item={psp} attributeName="PspType_id" label="Název" asyncUpdater={UpdatePspAsyncAction}>
-                            <option value="69ec2b0b-a39d-40df-9cea-e295b36749c9"> Value1</option>
-                            <option value="a517c2fd-8dc7-4a2e-a107-cbdb88ba2aa5"> Value2</option>
+                        <EditableAttributeSelect item={lesson} attributeName="id" label="Id" asyncUpdater={UpdateLessonsAsyncAction}>
+                            <option value="704e7bc2-b1d6-4fe3-95ce-b008b352dd59"> Value1</option>
+                            <option value="2042c68d-9b6f-4fce-9c35-d37bb36b4829"> Value2</option>
                         </EditableAttributeSelect>
                  </Col>
             </Row>
             <Row>
                 <Col>Počátek</Col>
-                <Col>{psp?.startdate}</Col>
+                <Col>{lesson?.type?.name}</Col>
             </Row>
             <Row>
                 <Col>Konec</Col>
-                <Col>{psp?.enddate}</Col>
+                <Col>{lesson?.topic?.name}</Col>
             </Row>
         </CardCapsule>
     )

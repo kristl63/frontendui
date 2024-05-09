@@ -28,7 +28,6 @@ export const EventLargeCard = ({event, children}) => {
                 <Col>
                    {/*  <UserRawCard user={user} /> */}
                     {JSON.stringify(event)}
-                    <>zde--------------</>
                 </Col>
             </Row>
         </CardCapsule>

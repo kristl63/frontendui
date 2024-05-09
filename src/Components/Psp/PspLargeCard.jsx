@@ -6,19 +6,19 @@ import { PspMediumCard } from './PspMediumCard'
 //import { UserRawCard } from './UserRawCard'
 //import { UserMediumCard } from './UserMediumCard'
 
-export const PspLargeCard = ({psp, children}) => {
+export const PspLargeCard = ({lesson, children}) => {
     return (
-        <CardCapsule title={"Událost " + psp?.name}>
+        <CardCapsule title={"Lesson " + lesson?.name}>
             <Row>
                 <Col md={3}>
-                    <PspMediumCard psp = {psp}/>
+                    <PspMediumCard lesson = {lesson}/>
                    {/*  <UserMediumCard user={user} /> */}
                 </Col>
                 <Col md={6}>
                     {children}
                 </Col>
                 <Col md={3}>
-                    <PspMediumCard psp = {psp}/>
+                    <PspMediumCard lesson = {lesson}/>
                    {/*  <UserRolesCard user={user} /> */}
                 </Col>
 
@@ -27,7 +27,7 @@ export const PspLargeCard = ({psp, children}) => {
             <Row>
                 <Col>
                    {/*  <UserRawCard user={user} /> */}
-                    {JSON.stringify(psp)}
+                    {JSON.stringify(lesson)}
                 </Col>
             </Row>
         </CardCapsule>

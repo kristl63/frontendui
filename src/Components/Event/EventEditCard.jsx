@@ -2,7 +2,7 @@
 import { CardCapsule, EditableAttributeText, EditableAttributeSelect } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { UpdateEventAsyncAction } from '../../Queries/UpadateEventAsyncAction'
+import { UpdateLessonsAsyncAction } from '../../Queries/UpadateLessonsAsyncAction'
 
 export const EventEditCard = ({event}) => {//Záměna user za event
 
@@ -34,7 +34,6 @@ export const EventEditCard = ({event}) => {//Záměna user za event
             </Row>
             <Row>
                 <Col>Konec</Col>
-                <>Tady</>
                 <Col>{event?.enddate}</Col>
             </Row>
         </CardCapsule>
