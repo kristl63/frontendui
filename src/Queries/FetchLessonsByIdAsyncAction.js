@@ -1,21 +1,13 @@
 import { CreateAsyncActionFromQuery } from "@hrbolek/uoisfrontend-shared/src"
 
 const query = `query ($id: UUID!) {
-    result: plannedLessonById(id: "$id") {   
+    result: plannedLessonById(id: $id) {   
       __typename
       id
       name
       order
-      changedby {
-        changedby {
-          fullname
-        }
-        email
-        id
-        valid
-      }
       semester {
-        name
+        id
       }
       topic {
         name
@@ -25,10 +17,9 @@ const query = `query ($id: UUID!) {
       }
       users {
         fullname
-        valid
       }
+      lastchange
     }
-  }
-}`
-
+  }`
+//SEMESTER NEMA NAME, 
 export const FetchLessonsByIdAsyncAction = CreateAsyncActionFromQuery(query)

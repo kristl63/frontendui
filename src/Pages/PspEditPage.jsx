@@ -21,7 +21,7 @@ export const PspEditPage = ()  => {
             //</div>
             <PspLargeCard lesson={lessons}>
                 <PspEditCard lesson = {lessons}/>
-                <PspEditCard lesson = {lessons}/>
+                
             </PspLargeCard>
         )
     } else {

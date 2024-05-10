@@ -2,9 +2,9 @@ import {CreateAsyncActionFromMutation} from "@hrbolek/uoisfrontend-shared/src"
 
 const mutation = `
 mutation($id: UUID!, $lastchange: DateTime!, $name: String,
-  $order: Int!, $topic_name: String!, $type_name: String!
+  $order: Int, $topic_name: String, $type_name: String
   ){
-    result: lessonUpdate(lesson: {
+    result: plannedLessonUpdate(lesson: {
       id: $id,
       lastchange: $lastchange,
       name: $name,
