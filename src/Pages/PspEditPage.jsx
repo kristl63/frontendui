@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom"
 import { useFreshItem, CreateAsyncQueryValidator, useDispatch } from "@hrbolek/uoisfrontend-shared/src"
 //import { FetchUserByIdAsyncAction } from "../Queries"
-import { FetchLessonsByIdAsyncAction } from "../Queries/FetchLessonsByIdAsyncAction"
+import { FetchPlanByIdAsyncAction } from "../Queries/FetchLessonsByIdAsyncAction"
 import { PspLargeCard } from "../Components/Psp/PspLargeCard"
 import { PspEditCard } from "../Components/Psp/PspEditCard"
 
@@ -10,10 +10,10 @@ const validator = CreateAsyncQueryValidator({error: "Nepovedlo se načíst uživ
 export const PspEditPage = ()  => {
     const {id} = useParams()
     const [onResolve, onReject] = validator(useDispatch())
-    const [lessons, userPromise] = useFreshItem({id}, FetchLessonsByIdAsyncAction)
+    const [lessons, userPromise] = useFreshItem({id}, FetchPlanByIdAsyncAction)
     userPromise.then(onResolve, onReject)
 
-    if (lessons) {          ////"704e7bc2-b1d6-4fe3-95ce-b008b352dd59" ID
+    if (lessons) {          ////"a5085468-394f-4a8b-bf23-4e72a6a6d415" ID
         return (
             //<UserLargeCard user={user} />
             //<div>Project name here

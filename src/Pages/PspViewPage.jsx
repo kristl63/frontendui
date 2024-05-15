@@ -7,22 +7,22 @@ import { FetchUserByIdAsyncAction } from "../Queries"
 
 import { PspLargeCard } from "../Components/Psp/PspLargeCard"
 import { PspEditCard} from "../Components/Psp/PspEditCard"
-import { FetchLessonsByIdAsyncAction } from "../Queries/FetchLessonsByIdAsyncAction"
+import { FetchPlanByIdAsyncAction } from "../Queries/FetchLessonsByIdAsyncAction"
 
 const validator = CreateAsyncQueryValidator({error: "Nepovedlo se načíst lessons", success: "Načtení lessons se povedlo"})
 export const PspViewPage = ()  => {
     const {id} = useParams()
     const [onResolve, onReject] = validator(useDispatch())
-    const [lessons, userPromise] = useFreshItem({id}, FetchLessonsByIdAsyncAction)
+    const [plan, userPromise] = useFreshItem({id}, FetchPlanByIdAsyncAction)
     userPromise.then(onResolve, onReject)
 
-    if (lessons) {
+    if (plan) {
         return (
             //<UserLargeCard user={user} />
             //<div>Project name here
             //    {JSON.stringify(event)}
             //</div>
-            <PspLargeCard lesson={lessons}/>
+            <PspLargeCard plan={plan}/>
         )
     } else {
         return (

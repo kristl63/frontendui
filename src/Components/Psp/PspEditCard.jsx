@@ -13,7 +13,7 @@ export const PspEditCard = ({lesson}) => {
             
             <Row>
                 <Col>Název</Col>
-                <Col>{lesson?.name}</Col>
+                <Col>{lesson?.semester?.subject?.name}</Col>
             </Row>
             <Row>
                  <Col>

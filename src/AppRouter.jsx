@@ -9,7 +9,7 @@ import { EventEditPage } from "./Pages/EventEditPage";
 import { PspViewPage } from "./Pages/PspViewPage";
 import { PspEditPage } from "./Pages/PspEditPage";
 // import { UserPage, GroupPage } from "./Pages";
-
+const prefix = "/lessons";
 export const Routes = [
     {
         path: "/",
@@ -32,12 +32,12 @@ export const Routes = [
         errorElement: <SearchPage />,
     },
     {
-        path: "/psp/view/:id",
+        path: prefix +  "/psp/view/:id",
         element: <PspViewPage />,
         errorElement: <SearchPage />,
     },
     {
-        path: "/psp/edit/:id",
+        path: prefix + "/psp/edit/:id",
         element: <PspEditPage />,
         errorElement: <SearchPage />,
     },
@@ -68,7 +68,7 @@ export const Routes = [
     },    
 ]
 
-const router = createBrowserRouter(Routes, {basename: "/lessons"});//ori="/ug"
+const router = createBrowserRouter(Routes);//ori="/ug"
 // const router = createBrowserRouter(Routes);
 
 export const AppRouter = () => <RouterProvider router={router} />

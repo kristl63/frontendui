@@ -3,21 +3,21 @@ import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-export const PspMediumCard = ({lesson}) => {//Záměna user za event
+export const PspMediumCard = ({ plan}) => {//Záměna user za event
     return (
-        <CardCapsule title={"Lesson - atributy" + lesson?.name}>
+        <CardCapsule title={"Lesson - atributy" + plan?.name}>
             
             <Row>
-                <Col>Posledni změna</Col>
-                <Col>{lesson?.lastchange}</Col>
+                <Col>Id</Col>
+                <Col>{plan?.id}</Col>
             </Row>
             <Row>
-                <Col>Typ</Col>
-                <Col>{lesson?.type?.name}</Col>
+                <Col>Subject name</Col>
+                <Col>{plan?.semester?.subject?.name}</Col>
             </Row>
             <Row>
-                <Col>Konec</Col>
-                <Col>{lesson?.topic?.name}</Col>
+                <Col>Id semestru</Col>
+                <Col>{plan?.semester?.id}</Col>
             </Row>
         </CardCapsule>
     )
