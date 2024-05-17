@@ -7,7 +7,8 @@ import { SearchPage } from "./Pages/SearchPage";
 import { EventPage } from "./Pages/EventPage";
 import { EventEditPage } from "./Pages/EventEditPage";
 import { PspViewPage } from "./Pages/PspViewPage";
-import { PspEditPage } from "./Pages/PspEditPage";
+//import { PspEditPage } from "./Pages/PspEditPage";
+import { PlanEditPage } from "./Pages/PlanEditPage";
 // import { UserPage, GroupPage } from "./Pages";
 const prefix = "/lessons";
 export const Routes = [
@@ -38,7 +39,7 @@ export const Routes = [
     },
     {
         path: prefix + "/psp/edit/:id",
-        element: <PspEditPage />,
+        element: <PlanEditPage/>,
         errorElement: <SearchPage />,
     },
     {
