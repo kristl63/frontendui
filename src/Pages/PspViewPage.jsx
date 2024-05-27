@@ -6,8 +6,8 @@ import { FetchUserByIdAsyncAction } from "../Queries"
 //import { FetchEventByIdAsyncAction } from "../Queries/FetchEventByIdAsyncAction copy"
 
 import { PspLargeCard } from "../Components/Plan/PspLargeCard"
-import { PlanEditCard} from "../Components/Plan/PlanEditCard"
-import { FetchPlanByIdAsyncAction } from "../Queries/FetchLessonsByIdAsyncAction"
+//import { PlanEditCard} from "../Components/Plan/PlanEditCard"
+import { FetchPlanByIdAsyncAction } from "../Queries/FetchPlanByIdAsyncAction"
 
 const validator = CreateAsyncQueryValidator({error: "Nepovedlo se načíst lessons", success: "Načtení lessons se povedlo"})
 export const PspViewPage = ()  => {

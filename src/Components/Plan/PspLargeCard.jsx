@@ -2,6 +2,10 @@ import { CardCapsule } from '@hrbolek/uoisfrontend-shared/src'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { PspMediumCard } from './PspMediumCard'
+import { PspMediumCardLessons } from './PspMediumCardLessons'
+import {PspMediumCardUsers} from './PspMediumCardUsers'
+import {PspMediumCardGroups} from './PspMediumCardGroups'
+import {PspMediumCardFacilities} from './PspMediumCardFacilities'
 //import { UserRolesCard } from './UserRolesCard'
 //import { UserRawCard } from './UserRawCard'
 //import { UserMediumCard } from './UserMediumCard'
@@ -10,15 +14,22 @@ export const PspLargeCard = ({plan, children}) => {
     return (
         <CardCapsule title={"Lesson " + plan?.name}>
             <Row>
+                <Row>
+                    <Col md={12}>
+                        <PspMediumCardLessons plan = {plan}/>
+                    </Col>
+                </Row>
                 <Col md={3}>
                     <PspMediumCard plan = {plan}/>
                    {/*  <UserMediumCard user={user} /> */}
                 </Col>
                 <Col md={6}>
                     {children}
+                    <PspMediumCardUsers plan = {plan}/>
+                    <PspMediumCardGroups plan = {plan}/>
                 </Col>
                 <Col md={3}>
-                    <PspMediumCard plan = {plan}/>
+                    <PspMediumCardFacilities plan = {plan}/>
                    {/*  <UserRolesCard user={user} /> */}
                 </Col>
 
