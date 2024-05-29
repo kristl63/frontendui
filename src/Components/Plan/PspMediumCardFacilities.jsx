@@ -4,21 +4,25 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 export const PspMediumCardFacilities = ({ plan}) => {//Záměna user za event
+    const lessons = plan?.lessons || [];
+
+    // Collect all unique facilities
+    const allFacilities = [];
+    lessons.forEach((lesson) => {
+        lesson.facilities.forEach((facility) => {
+            if (!allFacilities.find((f) => f.id === facility.id)) {
+                allFacilities.push(facility);
+            }
+        });
+    });
+
     return (
-        <CardCapsule title={"Facilities - atributy" + plan?.name}>
-            
-            <Row>
-                <Col>Lesson ID</Col>
-                <Col>{plan?.facilities?.id}</Col>
-            </Row>
-            <Row>
-                <Col>Lesson name</Col>
-                <Col>{plan?.lessons?.name}</Col>
-            </Row>
-            <Row>
-                <Col>Lesson lenght</Col>
-                <Col>{plan?.facilities?.label}</Col>
-            </Row>
+        <CardCapsule title={"Facilities"}>
+            <ul>
+                {allFacilities.map((facility) => (
+                    <li key={facility.id}>{facility.name}</li>
+                ))}
+            </ul>
         </CardCapsule>
-    )
-}
+    );
+};

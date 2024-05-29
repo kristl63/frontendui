@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 
 export const PspMediumCard = ({ plan}) => {//Záměna user za event
     return (
-        <CardCapsule title={"Semester - " + plan?.name}>
+        <CardCapsule title={"Semester"}>
             
             <Row>
                 <Col>Semester subject name</Col>

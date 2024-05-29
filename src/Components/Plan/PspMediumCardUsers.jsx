@@ -4,31 +4,26 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 export const PspMediumCardUsers = ({ plan}) => {//Záměna user za event
+    const lessons = plan?.lessons || [];
+
+    // Collect all unique users
+    const allUsers = [];
+    lessons.forEach((lesson) => {
+        lesson.users.forEach((user) => {
+            if (!allUsers.find((u) => u.id === user.id)) {
+                allUsers.push(user);
+            }
+        });
+    });
+
     return (
-        <CardCapsule title={"Users - atributy" + plan?.lessons?.users?.name}>
-            
-            <Row>
-                <Col>User ID</Col>
-                <Col>
-                
-                </Col>
-            </Row>
-            <Row>
-                <Col>Lesson name</Col>
-                <Col>{plan?.lessons?.users?.name}</Col>
-            </Row>
-            <Row>
-                <Col>Lesson lenght</Col>
-                <Col>{plan?.lessons?.users?.surname}</Col>
-            </Row>
-            <Row>
-                <Col>Lesson type ID</Col>
-                <Col>{plan?.lessons?.users?.fullname}</Col>
-            </Row>
-            <Row>
-                <Col>Lessons type name</Col>
-                <Col>{plan?.lessons?.users?.email}</Col>
-            </Row>
+        <CardCapsule title={"Users"}>
+            <ul>
+                {allUsers.map((user) => (
+                    <li key={user.id}>{user.fullname}</li>
+                ))}
+            </ul>
         </CardCapsule>
-    )
-}
+    );
+};
+
