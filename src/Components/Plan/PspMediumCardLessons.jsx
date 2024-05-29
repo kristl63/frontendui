@@ -8,16 +8,16 @@ export const PspMediumCardLessons = ({ plan}) => {//Záměna user za event
     const lessons = plan?.lessons || []
     const sortedLessons = lessons.toSorted((a, b) => a.order - b.order)
     return (
-        <CardCapsule title={"Lessons"}>
+        <CardCapsule title={"Lekce"}>
             <table className='table'>
                 <thead>
                     <tr>
-                        <th>Order</th>
-                        <th>Name</th>
-                        <th>Length</th>
-                        <th>User-fullname</th>
-                        <th>Group-name</th>
-                        <th>Facility-name</th>
+                        <th>Pořadí</th>
+                        <th>Název</th>
+                        <th>Délka</th>
+                        <th>Učitelé</th>
+                        <th>Skupiny</th>
+                        <th>Zázemí</th>
                     </tr>        
                 </thead>
                 <tbody>

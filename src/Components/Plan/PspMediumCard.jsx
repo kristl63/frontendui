@@ -5,18 +5,18 @@ import Col from 'react-bootstrap/Col'
 
 export const PspMediumCard = ({ plan}) => {//Záměna user za event
     return (
-        <CardCapsule title={"Plan"}>
+        <CardCapsule title={"Plán"}>
             
             <Row>
-                <Col>Plan name</Col>
+                <Col>Název plánu</Col>
                 <Col>{plan?.semester?.subject?.name}</Col>
             </Row>
             <Row>
-                <Col>Subject order</Col>
+                <Col>Pořadí plánu</Col>
                 <Col>{plan?.semester?.order}</Col>
             </Row>
             <Row>
-                <Col>Id plan</Col>
+                <Col>Id plánu</Col>
                 <Col>{plan?.semester?.id}</Col>
             </Row>
         </CardCapsule>

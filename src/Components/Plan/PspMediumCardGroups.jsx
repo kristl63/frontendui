@@ -16,7 +16,7 @@ export const PspMediumCardGroups = ({ plan }) => {
     });
 
     return (
-        <CardCapsule title={"Groups"}>
+        <CardCapsule title={"Skupiny"}>
             <ul>
                 {allGroups.map((group) => (
                     <li key={group.id}>{group.name}</li>

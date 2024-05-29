@@ -12,7 +12,7 @@ import {PspMediumCardFacilities} from './PspMediumCardFacilities'
 
 export const PspLargeCard = ({plan, children}) => {
     return (
-        <CardCapsule title={"Plan"}>
+        <CardCapsule title={"Plán"}>
             <Row>
                 <Col md={3}>
                     <PspMediumCard plan = {plan}/>

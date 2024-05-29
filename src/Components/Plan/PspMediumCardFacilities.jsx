@@ -17,7 +17,7 @@ export const PspMediumCardFacilities = ({ plan}) => {//Záměna user za event
     });
 
     return (
-        <CardCapsule title={"Facilities"}>
+        <CardCapsule title={"Zázemí"}>
             <ul>
                 {allFacilities.map((facility) => (
                     <li key={facility.id}>
