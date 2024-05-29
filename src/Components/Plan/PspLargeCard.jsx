@@ -12,24 +12,20 @@ import {PspMediumCardFacilities} from './PspMediumCardFacilities'
 
 export const PspLargeCard = ({plan, children}) => {
     return (
-        <CardCapsule title={"Lesson " + plan?.name}>
+        <CardCapsule title={"Lesson"}>
             <Row>
-                <Row>
-                    <Col md={12}>
-                        <PspMediumCardLessons plan = {plan}/>
-                    </Col>
-                </Row>
                 <Col md={3}>
                     <PspMediumCard plan = {plan}/>
                    {/*  <UserMediumCard user={user} /> */}
                 </Col>
                 <Col md={6}>
                     {children}
-                    <PspMediumCardUsers plan = {plan}/>
-                    <PspMediumCardGroups plan = {plan}/>
+                    <PspMediumCardLessons plan = {plan}/>
                 </Col>
                 <Col md={3}>
                     <PspMediumCardFacilities plan = {plan}/>
+                    <PspMediumCardUsers plan = {plan}/>
+                    <PspMediumCardGroups plan = {plan}/>
                    {/*  <UserRolesCard user={user} /> */}
                 </Col>
 
