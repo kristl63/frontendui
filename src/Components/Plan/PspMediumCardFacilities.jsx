@@ -20,7 +20,9 @@ export const PspMediumCardFacilities = ({ plan}) => {//Záměna user za event
         <CardCapsule title={"Facilities"}>
             <ul>
                 {allFacilities.map((facility) => (
-                    <li key={facility.id}>{facility.name}</li>
+                    <li key={facility.id}>
+                        {facility.name} - {facility.label}
+                    </li>
                 ))}
             </ul>
         </CardCapsule>

@@ -6,11 +6,13 @@ import Col from 'react-bootstrap/Col'
 
 export const PspMediumCardLessons = ({ plan}) => {//Záměna user za event
     const lessons = plan?.lessons || []
+    const sortedLessons = lessons.toSorted((a, b) => a.order - b.order)
     return (
         <CardCapsule title={"Lessons"}>
             <table className='table'>
                 <thead>
                     <tr>
+                        <th>Order</th>
                         <th>Name</th>
                         <th>Length</th>
                         <th>User-fullname</th>
@@ -19,8 +21,9 @@ export const PspMediumCardLessons = ({ plan}) => {//Záměna user za event
                     </tr>        
                 </thead>
                 <tbody>
-                    {lessons.map(
+                    {sortedLessons.map(
                         (L)=> <tr>
+                            <td>{L.order}</td>
                             <td>{L.name}</td>
                             <td>{L.length}</td>
                             <td>{L.users.map((U)=>U.fullname).join(", ")}</td>
