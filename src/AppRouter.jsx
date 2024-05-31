@@ -43,7 +43,7 @@ export const Routes = [
         errorElement: <SearchPage />,
     },
     {
-        path: "/group/:id",
+        path: "/group/view/:id",
         element: <GroupPage />,
         errorElement: <SearchPage />,
     },
